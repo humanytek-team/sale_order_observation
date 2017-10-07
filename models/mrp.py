@@ -36,7 +36,7 @@ class MrpProduction(models.Model):
     sale_line_observation = fields.Text('Observation',
                             compute='_compute_observation', readonly=True)
 
-    @api.multi
+    @api.one
     def _compute_observation(self):
         for line in self.sale_id.order_line:
             if line.product_id == self.product_id:

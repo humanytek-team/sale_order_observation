@@ -22,3 +22,4 @@
 
 import sale
 import mrp
+import account_invoice

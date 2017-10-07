@@ -20,22 +20,13 @@
 #
 ###############################################################################
 
-{
-    'name': "Sale Order Type",
-    'summary': """
-    """,
-    'description': """
-    """,
-    'author': "Humanytek",
-    'website': "http://www.humanytek.com",
-    'category': 'Sale',
-    'version': '1.0.0',
-    'depends': ['mrp_sale_info'],
-    'data': [
-        'view/sale_view.xml',
-        'view/mrp_view.xml',
-        'view/account_invoice_view.xml'
-    ],
-    'demo': [
-    ],
-}
+from odoo import api, fields, models
+import logging
+_logger = logging.getLogger(__name__)
+
+
+class AccountInvoiceLine(models.Model):
+    _name = "account.invoice.line"
+    _inherit = 'account.invoice.line'
+
+    observation = fields.Text(string='Observation')
