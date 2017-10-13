@@ -32,7 +32,9 @@ class MrpProduction(models.Model):
     sale_type_id = fields.Char(related='sale_id.type_id.name',
                               string='Sale Order Type',
                               readonly=True, store=False)
-
+    type_priority = fields.Integer(related='sale_id.type_id.priority',
+                            string='Priority', readonly=True,
+                            store=False)
     sale_line_observation = fields.Text('Observation',
                             compute='_compute_observation', readonly=True)
 

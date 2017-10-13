@@ -75,4 +75,5 @@ class SaleOrderType(models.Model):
 
     name = fields.Char('Type', required=True)
     active = fields.Boolean('Active', default=True)
+    priority = fields.Integer('Priority', required=True, default=1)
 
