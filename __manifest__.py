@@ -36,7 +36,7 @@
         'view/mrp_view.xml',
         'view/account_invoice_view.xml',
         'report/sale_report_template.xml',
-        #'report/invoice_report_templates.xml',
+        'report/invoice_report_templates.xml',
     ],
     'demo': [
     ],
