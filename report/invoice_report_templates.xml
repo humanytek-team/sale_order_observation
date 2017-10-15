@@ -3,14 +3,27 @@
 
     <template id="report_invoice_document_date" inherit_id="account.report_invoice_document">
 
-        <xpath expr="//t/div/table/thead/tr" position="inside">
+        <xpath expr="//t/div/table/thead/tr/th[2]" position="after">
             <th>Observación</th>
         </xpath>
-        <xpath expr="//t/div/table/tbody/tr" position="inside">
+        <xpath expr="//t/div/table/tbody/tr/td[2]" position="after">
             <td class="text-right">
                 <span t-field="l.observation"/>
             </td>
         </xpath>
+        <xpath expr="//t/div/table/thead/tr/th[6]" position="after">
+            <th>Descuento</th>
+            <th>Impuesto</th>
+        </xpath>
+        <xpath expr="//t/div/table/tbody/tr/td[6]" position="after">
+            <td class="text-right">
+                <span t-field="l.discount"/>
+            </td>
+            <td class="text-right">
+                <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"/>
+            </td>
+        </xpath>
+        <xpath expr="//span[@t-field='o.comment']" position="replace" />
 
     </template>
 
