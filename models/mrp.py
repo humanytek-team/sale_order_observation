@@ -40,7 +40,20 @@ class MrpProduction(models.Model):
 
     @api.one
     def _compute_observation(self):
-        for line in self.sale_id.order_line:
-            if line.product_id == self.product_id:
-                self.sale_line_observation = line.observation
+        productions = self.search([('sale_id', '=', self.sale_id.id)])
+        cont = 0
+        _logger.info('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+        _logger.info(self.id)
+        for production in productions:
+            _logger.info('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+            _logger.info(cont)
+            if production.id == self.id:
+                _logger.info('contaaaaaaaaaaaassssssssssssssssssssssssss')
+                break
+            cont += 1
+        if self.sale_id:
+            self.sale_line_observation = self.sale_id.order_line[cont].observation
+        #for line in self.sale_id.order_line:
+            #if line.product_id == self.product_id:
+                #self.sale_line_observation = line.observation
 
