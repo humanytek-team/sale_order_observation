@@ -25,7 +25,7 @@
         </xpath>
         <xpath expr="//span[@t-field='o.comment']" position="replace" />
 
-        <xpath expr="//t/div/table" position="attributes">
+       <!-- <xpath expr="//t/div/table" position="attributes">
             <attribute name="style">font-size:9px;background-color: #DDDDDD;border: 1px solid #ddd;border-collapse: collapse;padding: 5px;</attribute>
         </xpath>
         <xpath expr="//t/div/table/tr[2]/td/p" position="attributes" >
@@ -49,7 +49,7 @@
             <td style="width:15%;text-align:center;">
                 <B>Referencia de Cliente:</B><BR/><p t-field="o.name"/>
             </td>
-        </xpath>
+        </xpath>-->
 
     </template>
 
