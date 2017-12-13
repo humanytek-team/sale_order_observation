@@ -40,12 +40,26 @@ class MrpProduction(models.Model):
 
     @api.one
     def _compute_observation(self):
-        productions = self.search([('sale_id', '=', self.sale_id.id)])
-        cont = 0
-        for production in productions:
-            if production.id == self.id:
-                break
-            cont += 1
-        if self.sale_id:
-            self.sale_line_observation = self.sale_id.order_line[cont].observation
+        StockMove = self.env['stock.move']
+        ProcurementOrder = self.env['procurement.order']
+        moves = StockMove.search([('production_id', '=', self.id)])
+        if moves:
+            move_dest = moves[0].move_dest_id
+            if move_dest:
+                procurements = ProcurementOrder.search([
+                                        ('move_ids', 'in', move_dest[0].id)])
+                if procurements:
+                    line = procurements[0].sale_line_id
+                    if line:
+                        self.sale_line_observation = line.observation
+
+
+        #productions = self.search([('sale_id', '=', self.sale_id.id)])
+        #cont = 0
+        #for production in productions:
+            #if production.id == self.id:
+                #break
+            #cont += 1
+        #if self.sale_id:
+            #self.sale_line_observation = self.sale_id.order_line[cont].observation
 
