@@ -50,7 +50,15 @@
                 <B>Referencia de Cliente:</B><BR/><p t-field="o.name"/>
             </td>
         </xpath>
-
+        <!--<xpath expr="//table[4]/tr/td[3]" position="replace" >
+            <td style="width:15%;text-align:center;">
+                <B>Referencia:</B><BR/><p t-field="o.name"/>
+            </td>
+        </xpath>-->
+        <xpath expr="//span[@t-field='o.partner_id.name']" position="after">
+            <BR/>
+            <span t-field="o.partner_id.vat_split"/>
+        </xpath>
     </template>
 
 </odoo>
