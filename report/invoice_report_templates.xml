@@ -2,11 +2,18 @@
 <odoo>
 
     <template id="report_invoice_document_date" inherit_id="account.report_invoice_document">
-
-        <xpath expr="//t/div/table/thead/tr/th[2]" position="after">
+        <xpath expr="//t/div/table/thead/tr/th[1]" position="after">
+            <th>Código Prod.</th>
+        </xpath>
+        <xpath expr="//t/div/table/tbody/tr/td[1]" position="after">
+            <td class="text-right">
+                <span t-field="l.product_id.default_code"/>
+            </td>
+        </xpath>
+        <xpath expr="//t/div/table/thead/tr/th[3]" position="after">
             <th>Observación</th>
         </xpath>
-        <xpath expr="//t/div/table/tbody/tr/td[2]" position="after">
+        <xpath expr="//t/div/table/tbody/tr/td[3]" position="after">
             <td class="text-right">
                 <span t-field="l.observation"/>
             </td>
