@@ -34,8 +34,10 @@ class StockMove(models.Model):
 
     @api.one
     def _compute_observation(self):
-        moves = self.search([('move_dest_id.id', '=', self.id)])
-        if moves:
-            self.sale_line_observation = moves[0].production_id.sale_line_observation
-            return
+        if self.id:
+            moves = self.search([('move_dest_id.id', '=', self.id)], limit=1)
+            if moves:
+                if moves[0].production_id:
+                    self.sale_line_observation = moves[0].production_id.sale_line_observation
+        return
 
