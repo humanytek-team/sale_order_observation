@@ -23,4 +23,4 @@
 import sale
 import mrp
 import account_invoice
-import stock_move
+#import stock_move
