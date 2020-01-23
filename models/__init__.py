@@ -20,7 +20,7 @@
 #
 ###############################################################################
 
-import sale
-import mrp
-import account_invoice
-import stock_move
+from . import sale
+from . import mrp
+from . import account_invoice
+from . import stock_move

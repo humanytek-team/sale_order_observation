@@ -8,7 +8,7 @@
         <xpath expr="//t/div/table/thead/tr/th[1]" position="after">
             <th style="width:15%;" class="text-right">Código Prod.</th>
         </xpath>
-        <xpath expr="//t/div/table/tbody/tr/td[1]" position="after">
+        <xpath expr="//t/div/table/tbody/t/tr/t/td[1]" position="after">
             <td class="text-right">
                 <span t-field="l.product_id.default_code"/>
             </td>
@@ -19,7 +19,7 @@
         <xpath expr="//t/div/table/thead/tr/th[3]" position="after">
             <th>Observación</th>
         </xpath>
-        <xpath expr="//t/div/table/tbody/tr/td[3]" position="after">
+        <xpath expr="//t/div/table/tbody/t/tr/t/td[3]" position="after">
             <td class="text-right">
                 <span t-field="l.observation"/>
             </td>
@@ -28,7 +28,7 @@
             <th>Descuento</th>
             <th>Impuesto</th>
         </xpath>
-        <xpath expr="//t/div/table/tbody/tr/td[6]" position="after">
+        <xpath expr="//t/div/table/tbody/t/tr/t/td[6]" position="after">
             <td class="text-right">
                 <span t-field="l.discount"/>
             </td>
@@ -41,7 +41,7 @@
        <!-- <xpath expr="//t/div/table" position="attributes">
             <attribute name="style">font-size:9px;background-color: #DDDDDD;border: 1px solid #ddd;border-collapse: collapse;padding: 5px;</attribute>
         </xpath>-->
-        <xpath expr="//table[2]/tr/td/p" position="attributes" >
+        <!-- <xpath expr="//table[2]/tr/td/p" position="attributes" >
             <attribute name="style">margin-left: 0px;</attribute>
         </xpath>
         <xpath expr="//table[2]/tr/td/p[2]" position="attributes" >
@@ -52,8 +52,8 @@
         </xpath>
         <xpath expr="//table[2]/tr/td[2]/p[2]" position="attributes" >
             <attribute name="style">margin-left: 0px;</attribute>
-        </xpath>
-        <xpath expr="//table[4]/tr/td" position="replace" >
+        </xpath> -->
+        <!-- <xpath expr="//table[4]/tr/td" position="replace" >
             <td style="width:15%;text-align:center;">
                 <strong>Proforma:</strong><BR/><p t-field="o.origin"/>
             </td>
@@ -62,13 +62,13 @@
             <td style="width:15%;text-align:center;">
                 <B>Referencia de Cliente:</B><BR/><p t-field="o.name"/>
             </td>
-        </xpath>
+        </xpath> -->
         <!--<xpath expr="//table[4]/tr/td[3]" position="replace" >
             <td style="width:15%;text-align:center;">
                 <B>Referencia:</B><BR/><p t-field="o.name"/>
             </td>
         </xpath>-->
-        <xpath expr="//span[@t-field='o.partner_id.name']" position="after">
+        <xpath expr="//span[@t-field='o.partner_id.vat']" position="after">
             <BR/>
             <span t-field="o.partner_id.vat_split"/>
         </xpath>
