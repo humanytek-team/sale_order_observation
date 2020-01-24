@@ -32,6 +32,7 @@
     'version': '1.0.0',
     'depends': ['mrp_sale_info'],
     'data': [
+        'security/ir.model.access.csv',
         'view/sale_view.xml',
         'view/mrp_view.xml',
         'view/account_invoice_view.xml',
