@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="mrp_production_sale_observation_form_view" model="ir.ui.view">
         <field name="name">mrp.production.sale.observation.form.view</field>
         <field name="model">mrp.production</field>
@@ -12,8 +11,6 @@
             </field>
         </field>
     </record>
-
-
     <record id="mrp_production_sale_observation_tree_view" model="ir.ui.view">
         <field name="name">mrp.production.sale.observation.tree.view</field>
         <field name="model">mrp.production</field>
@@ -26,5 +23,4 @@
             </field>
         </field>
     </record>
-
 </odoo>
